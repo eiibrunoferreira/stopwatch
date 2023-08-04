@@ -16,33 +16,50 @@
 }
 
 .content h1 {
-    color: rgb(123, 0, 160);
+    color: rgb(104, 1, 136);
+    position: relative;
+    display: flex;
+}
+
+.content h1::after {
+    margin-top: 5px;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 38px;
+    background-color: rgb(104, 1, 136);
 }
 
 .timer {
     display: flex;
+    flex-direction: column;
     font-size: 55px;
     font-weight: bold;
-    color: #202020;
+    color: rgb(36, 36, 36);
+    gap: 2px;
+}
+
+.hour-minutes-seconds {
+    display: flex;
 }
 
 .time {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 10px;
-    color: rgb(69, 0, 90);
+    color: rgb(36, 36, 36);
     min-width: 90px;
 }
 
 .separator {
     padding: 0 10px;
-    color: rgb(47, 0, 59);
+    color: rgb(36, 36, 36);
 }
 
 #miliseconds {
     font-size: 32px;
-    color: rgb(47, 0, 59);
+    color: rgb(36, 36, 36);
 }
 
 .buttons {
@@ -52,12 +69,13 @@
 
 .btn {
     background-color: #e7e7e7;
+    color: rgb(36, 36, 36);
     padding: 10px 20px;
     font-size: 18px;
     font-weight: bold;
     border-radius: 30px;
     cursor: pointer;
-    border: 2px solid #cfcfcf;
+    border: 2px solid rgb(36, 36, 36);
     transition: all .2s ease-in-out;
 }
 
@@ -66,7 +84,7 @@
 }
 
 #btnstart {
-    background-color: rgb(123, 0, 160);
+    background-color: rgb(104, 1, 136);
     color: #e7e7e7;
     border: transparent;
 }
