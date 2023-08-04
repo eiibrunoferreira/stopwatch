@@ -1,3 +1,4 @@
+const hourel = document.querySelector("#hour")
 const minutesel = document.querySelector("#minutes");
 const secondsel = document.querySelector("#seconds");
 const milisecondsel = document.querySelector("#miliseconds");
@@ -7,6 +8,7 @@ const btnresume = document.querySelector("#btnresume");
 const btnreset = document.querySelector("#btnreset");
 
 let interval;
+let hour = 0;
 let minutes = 0;
 let seconds = 0;
 let miliseconds = 0;
@@ -32,9 +34,15 @@ function startTimer() {
             
             if(seconds === 60) {
                 minutes ++;
-                seconds =0;
+                seconds = 0;
             }
 
+            if(minutes === 60) {
+                hour ++;
+                minutes = 0;
+            }
+
+            hourel.textContent = formatTime(hour);
             minutesel.textContent = formatTime(minutes);
             secondsel.textContent = formatTime(seconds);
             milisecondsel.textContent = formatmiliseconds(miliseconds);
@@ -60,14 +68,17 @@ function resumeTimer() {
 
 function resetTimer() {
     clearInterval(interval);
+    hour = 0;
     minutes = 0;
     seconds = 0;
     miliseconds = 0;
 
+    hourel.textContent = "00"
     minutesel.textContent = "00"
     secondsel.textContent = "00"
     milisecondsel.textContent ="000"
 
+    isPaused = false
     btnstart.style.display = "block";
     btnpause.style.display = "none";
     btnresume.style.display = "none";
