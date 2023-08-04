@@ -1,4 +1,4 @@
 # stopwatch
-Um cronômetro totalmente funcional, com milissecundos, segundos e minutos!
+Um cronômetro totalmente funcional, com milissecundos, segundos, minutos e horas!
 
 
