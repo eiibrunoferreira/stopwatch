@@ -1,4 +1,6 @@
-const hourel = document.querySelector("#hour")
+const contentdayel = document.querySelector("#content-day");
+const dayel = document.querySelector("#day");
+const hourel = document.querySelector("#hour");
 const minutesel = document.querySelector("#minutes");
 const secondsel = document.querySelector("#seconds");
 const milisecondsel = document.querySelector("#miliseconds");
@@ -8,6 +10,7 @@ const btnresume = document.querySelector("#btnresume");
 const btnreset = document.querySelector("#btnreset");
 
 let interval;
+let day = 0;
 let hour = 0;
 let minutes = 0;
 let seconds = 0;
@@ -42,6 +45,13 @@ function startTimer() {
                 minutes = 0;
             }
 
+            if(hour === 24) {
+                hour = 0;
+                day ++;
+                contentdayel.style.display = "flex";
+            }s
+
+            dayel.textContent = formatTime(day);
             hourel.textContent = formatTime(hour);
             minutesel.textContent = formatTime(minutes);
             secondsel.textContent = formatTime(seconds);
@@ -68,17 +78,20 @@ function resumeTimer() {
 
 function resetTimer() {
     clearInterval(interval);
+    day = 0;
     hour = 0;
     minutes = 0;
     seconds = 0;
     miliseconds = 0;
 
+    dayel.textContent = "00"
     hourel.textContent = "00"
     minutesel.textContent = "00"
     secondsel.textContent = "00"
     milisecondsel.textContent ="000"
 
     isPaused = false
+    contentdayel.style.display = "none";
     btnstart.style.display = "block";
     btnpause.style.display = "none";
     btnresume.style.display = "none";
