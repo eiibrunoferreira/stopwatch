@@ -49,7 +49,7 @@ function startTimer() {
                 hour = 0;
                 day ++;
                 contentdayel.style.display = "flex";
-            }s
+            }
 
             dayel.textContent = formatTime(day);
             hourel.textContent = formatTime(hour);
